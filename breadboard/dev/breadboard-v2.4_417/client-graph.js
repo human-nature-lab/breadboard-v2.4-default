@@ -6,6 +6,7 @@ async function init () {
   	Breadboard.addScriptFromURL('/generated/breadboard-v2.4/js/app.js'),
     Breadboard.addStyleFromURL('/generated/breadboard-v2.4/css/chunk-vendors.css'),
     Breadboard.addStyleFromURL('/generated/breadboard-v2.4/css/app.css'),
+    Breadboard.addScriptFromURL('https://www.google.com/recaptcha/api.js'),
   ])
 }
 

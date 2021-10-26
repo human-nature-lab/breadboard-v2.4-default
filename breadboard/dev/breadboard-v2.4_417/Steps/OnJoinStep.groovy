@@ -3,7 +3,10 @@ onJoinStep = stepFactory.createNoUserActionStep()
 onJoinStep.run = { playerId->
   println "onJoinStep.run"
   def player = g.getVertex(playerId)
-  startTutorial(player)
+  player.step = "recaptcha"
+  player.on("verifyRecaptcha", { v, data ->
+    verifyRecaptcha(v, data)
+  })
 }
 onJoinStep.done = {
   println "onJoinStep.done"

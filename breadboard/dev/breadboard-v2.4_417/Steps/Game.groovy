@@ -18,7 +18,7 @@ startGame = { player ->
   } as GroovyTimerTask, (long)Parameters.timeStepLength, (long)Parameters.timeStepLength)
 
   player.on("displaySurvey", { v, data ->
-    player.bonus = 1.0
+    player.bonus = 1.0 + (0.01 * v.timeStep)
     a.addEvent("displaySurvey", [
       player: v.id
     ])
@@ -33,6 +33,8 @@ startGame = { player ->
     player.submit = """
       <h3>Thank you for participating in this game!</h3>
       <p>You have earned an additional bonus of ${currency.format(bonus)}</p>""".toString()
+    player.submit += """<p>Please leave any comments in the box below and click "Submit HIT" to submit your assignment to AMT.</p>""".toString()
+    player.submit += g.getSubmitForm(v, bonus, "completed", false, true)
     player.step = "submit"
     a.addEvent("submitHit", [
       player: v.id

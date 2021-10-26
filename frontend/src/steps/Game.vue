@@ -7,6 +7,11 @@
     </v-row>
     <v-row>
       <v-col>
+        <h3>You have been waiting for {{player.timeStep}} seconds.</h3>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
         <v-btn @click="finishGame">Submit</v-btn>
       </v-col>
     </v-row>

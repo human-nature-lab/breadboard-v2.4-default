@@ -12,10 +12,14 @@
     </v-row>
     <v-row>
       <v-col>
-        <Tutorial v-if="player.step === 'tutorial'" :player="player" />
+        <Recaptcha v-if="player.step === 'recaptcha'" :player="player" />
+        <Tutorial v-else-if="player.step === 'tutorial'" :player="player" />
         <Game v-else-if="player.step === 'game'" :player="player" />
         <Survey v-else-if="player.step === 'survey'" />
         <Finish v-else-if="player.step === 'submit'" :player="player" />
+        <div v-else-if="player.step === 'failedCaptcha'">
+          <h2>Unfortunately, you failed the reCAPTCHA, please return the HIT.</h2>
+        </div>
       </v-col>
     </v-row>
   </v-app>
@@ -23,6 +27,7 @@
 
 <script>
 /* global Breadboard */
+import Recaptcha from './steps/Recaptcha'
 import Game from './steps/Game'
 import Tutorial from './steps/Tutorial'
 import Survey from './steps/Survey'
@@ -30,7 +35,7 @@ import Finish from "./steps/Finish";
 
 export default {
   name: 'App',
-  components: { Game, Tutorial, Survey, Finish },
+  components: { Recaptcha, Game, Tutorial, Survey, Finish },
 
   data () {
     return {
