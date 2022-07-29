@@ -1,12 +1,10 @@
 <template>
-  <v-main class="main">
-    <tutorial-step
-        :step="step"
-        @next="step++"
-        @back="step--"
-        @done="onDone"
-    />
-  </v-main>
+  <tutorial-step
+      :step="step"
+      @next="step++"
+      @back="step--"
+      @done="onDone"
+  />
 </template>
 
 <script>

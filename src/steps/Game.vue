@@ -7,7 +7,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <h3>You have been waiting for {{player.timeStep}} seconds.</h3>
+        <h3>You have been waiting for {{player.timeStep}} / {{player.gameLength}} seconds.</h3>
       </v-col>
     </v-row>
     <v-row>
@@ -19,31 +19,12 @@
 </template>
 
 <script>
-/* global Breadboard */
 
 export default {
   name: 'Game',
 
   props: {
     player: Object
-  },
-
-  mounted () {
-  },
-
-  watch: {
-  },
-
-  components: {
-  },
-
-  filters: {
-  },
-
-  data: () => ({
-  }),
-
-  computed: {
   },
 
   methods: {

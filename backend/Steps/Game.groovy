@@ -4,6 +4,7 @@ startGame = { player ->
   player.bonus = 0
   player.endGame = false
   player.timeStep = 0
+  player.gameLength = Parameters.gameLength
 
   def timer = new BBTimer()
   timer.scheduleAtFixedRate({

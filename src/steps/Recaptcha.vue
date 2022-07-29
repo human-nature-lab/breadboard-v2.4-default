@@ -1,11 +1,5 @@
 <template>
-  <v-main>
-    <v-row>
-      <v-col>
-        <div id="recaptcha"></div>
-      </v-col>
-    </v-row>
-  </v-main>
+  <div id="recaptcha"></div>
 </template>
 
 <script>

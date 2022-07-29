@@ -1,0 +1,20 @@
+/* Styles for your graph view in the admin console */
+
+circle[step="recaptcha"] {
+  fill: orange;
+}
+circle[step="tutorial"] {
+  fill: yellow;
+}
+circle[step="game"] {
+  fill: green;
+}
+circle[step="survey"] {
+  fill: blue;
+}
+circle[step="submit"] {
+  fill: purple;
+}
+circle[step="failedCaptcha"], circle[step="failed"] {
+  fill: red;
+}

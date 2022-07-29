@@ -12,6 +12,7 @@ Parameters = [
   gameLength: 60000,
 ]
 
+// This handles responses for the recaptcha component
 verifyRecaptcha = { player, key ->
     RequestBody body = new FormBody.Builder()
       .add("secret", "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe")
