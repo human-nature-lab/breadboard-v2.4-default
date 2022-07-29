@@ -1,20 +1,19 @@
 /* Styles for your graph view in the admin console */
-
-circle[step="recaptcha"] {
+#graphDiv circle[step="recaptcha"] {
   fill: orange;
 }
-circle[step="tutorial"] {
+#graphDiv circle[step="tutorial"] {
   fill: yellow;
 }
-circle[step="game"] {
+#graphDiv circle[step="game"] {
   fill: green;
 }
-circle[step="survey"] {
+#graphDiv circle[step="survey"] {
   fill: blue;
 }
-circle[step="submit"] {
+#graphDiv circle[step="submit"] {
   fill: purple;
 }
-circle[step="failedCaptcha"], circle[step="failed"] {
+#graphDiv circle[step="failedCaptcha"], #graphDiv circle[step="failed"] {
   fill: red;
 }
