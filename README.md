@@ -3,7 +3,7 @@ This is a Vue started template designed to make it easy to get started with [bre
 
 ## Prerequisites
 - [breadboard] - Install the Breadboard software
-- [nodejs/npm] - Install nodejs and the package manager npm (in most cases this is installed with nodejs)
+- [nodejs/npm] - Install NodeJS and the package manager NPM (usually this is automatically installed with NodeJS)
 
 ## Installation
 - Make sure all prerequisites are installed
@@ -22,17 +22,17 @@ This is a Vue started template designed to make it easy to get started with [bre
 - Configure the environment
   - Copy `.env.default` to a file called `.env` in the same directory: `cp .env.default .env`
   - Change the variables in `.env` for your environment
-    - `BREADBOARD_ROOT` should be the path to the location of your breadboard server
-    - `EXPERIMENT_ROOT` the relative path from your breadboard server to the experiment directory created in step 3 of "Configure Breadboard". Usually this is looks like `dev/{experiment name_2345}`
-    - `PUBLIC_ROOT` the name of the experiment root. Usually something like `generated/{experiment name}`
+    - `BREADBOARD_ROOT` is the relative or absolute path to the location of your breadboard server
+    - `EXPERIMENT_ROOT` is the relative path from your breadboard server to the experiment directory created in step 3 of "Configure Breadboard". Usually this is looks like `dev/{experiment name_2345}`
+    - `PUBLIC_ROOT` the name of the folder to store generated client files. It's your decision what to call this directory, but it must start with `generated`. Usually it would be something like `generated/{experiment name}`
 - Start the dev server: `npm run serve`
-  - Now all changes made to this directory will show up in breadboard and "backend" changes will be synced with your breadboard experiment
+  - Now all changes made to this directory will show up in breadboard and changes in the "backend" directory will be synced with your breadboard experiment
 - Create a new "Experiment Instance" in your breadboard server
 - Open the client login page from the "Experiment Instances" module in breadboard
   - Now changes made to code in this directory will automatically update in your web browser
 
 # NOTE!!
-Deleting/renamings files in the backend directory will delete or rename files in the `dev/{experiment}` directory within your breadboard server. They will need to be deleted/renamed manually. However, new files and changes are handled automatically.
+Deleting/renaming files in the backend directory will **NOT** delete or rename files in the `dev/{experiment}` directory within your breadboard server. They will need to be deleted/renamed manually. However, new files and changes to the code are handled automatically.
 
 [breadboard]: https://breadboard.yale.edu
 [nodejs/npm]: https://nodejs.org/
