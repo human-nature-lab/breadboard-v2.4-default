@@ -13,7 +13,7 @@
 
 <script>
 /* global Breadboard */
-import { DefaultView } from '@human-nature-lab/breadboard-client'
+import { DefaultView } from '@human-nature-lab/breadboard-client/dist/client.common'
 import MainLayout from './layouts/MainLayout.vue'
 import Recaptcha from './steps/Recaptcha'
 import Game from './steps/Game'
