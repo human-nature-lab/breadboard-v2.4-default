@@ -5,12 +5,12 @@ dotenv.config()
 
 const publicRoot = process.env.PUBLIC_ROOT || '/generated/'
 const outputDir = path.join(process.env.BREADBOARD_ROOT, publicRoot)
-
 const plugins = []
 
+// Copy all experiment files into the experiment directory
 if (process.env.EXPERIMENT_ROOT) {
   const expPath = path.join(process.env.BREADBOARD_ROOT, process.env.EXPERIMENT_ROOT)
-  console.log('copying to', expPath)
+  console.log('copying breadboard files to', expPath)
   plugins.push(
     new CopyPlugin([{
       from: '**',
@@ -25,7 +25,20 @@ if (process.env.EXPERIMENT_ROOT) {
         }
         return content
       },
-    }])
+    }]),
+  )
+}
+
+// Copy all data files into a breadboard directory
+if (process.env.DATA_ROOT) {
+  const dataDir = path.join(process.env.BREADBOARD_ROOT, process.env.DATA_ROOT)
+  console.log('copying data files to', dataDir)
+  plugins.push(
+    new CopyPlugin([{
+      from: '**',
+      to: dataDir,
+      context: 'data/',
+    }]),
   )
 }
 
@@ -34,13 +47,12 @@ module.exports = {
   publicPath: publicRoot,
   transpileDependencies: [
     'vuetify',
-    '@human-nature-lab/breadboard-client'
   ],
   filenameHashing: false,
   devServer: {
-    writeToDisk: true
+    writeToDisk: true,
   },
   configureWebpack: {
     plugins,
-  }
+  },
 }
