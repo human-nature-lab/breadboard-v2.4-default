@@ -5,6 +5,12 @@
       <v-toolbar-title>Breadboard v2.4 Example</v-toolbar-title>
       <v-spacer />
     </v-app-bar>
+    <ConnectionStatus />
+    <PlayerTimers
+      v-if="!hideTimers"
+      :player="player"
+      class="flex-grow-0"
+    />
     <v-main>
       <v-progress-linear v-if="loading" indeterminate />
       <v-col>
@@ -14,15 +20,18 @@
   </v-app>
 </template>
 
-<script lang="ts">
-  import Vue from 'vue'
+<script>
+import { ConnectionStatus, PlayerTimers } from '@human-nature-lab/breadboard-client'
 
-  export default Vue.extend({
-    name: 'MainLayout',
-    props: {
-      loading: Boolean,
-    },
-  })
+export default {
+  name: 'MainLayout',
+  components: { PlayerTimers, ConnectionStatus },
+  props: {
+    loading: Boolean,
+    hideTimers: Boolean,
+    player: Object,
+  },
+}
 </script>
 
 <style lang="sass">

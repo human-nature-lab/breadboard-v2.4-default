@@ -31,11 +31,10 @@ startGame = { player ->
       player: v.id
     ] + data)
     def bonus = Math.round(v.bonus * 100)/100
-    player.submit = """
+    player.text = """
       <h3>Thank you for participating in this game!</h3>
       <p>You have earned an additional bonus of ${currency.format(bonus)}</p>""".toString()
-    player.submit += """<p>Please leave any comments in the box below and click "Submit HIT" to submit your assignment to AMT.</p>""".toString()
-    player.submit += g.getSubmitForm(v, bonus, "completed", false, true)
+    player.reason = "completed"
     player.step = "submit"
     a.addEvent("submitHit", [
       player: v.id

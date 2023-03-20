@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "dev": "npm run serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@human-nature-lab/breadboard-client": "^1.0.17",
+    "@human-nature-lab/breadboard-client": "^1.0.20",
     "core-js": "^3.6.5",
     "lodash": "^4.17.21",
     "luxon": "^1.26.0",
