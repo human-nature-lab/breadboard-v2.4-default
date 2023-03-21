@@ -20,8 +20,12 @@ if (process.env.EXPERIMENT_ROOT) {
         // content is a Buffer
         // Add our public root to the client graph
         if (path.basename(filePath) === 'client-graph.js') {
-          const s = content.toString()
-          return Buffer.from(s.replace(/__PUBLIC_ROOT__/g, publicRoot))
+          const isProd = process.env.NODE_ENV === 'production'
+          let s = content.toString()
+          s = s.replace(/__PUBLIC_ROOT__/g, publicRoot)
+          s = s.replace(/__DEV__/g, !isProd)
+          s = s.replace(/__PROD__/g, isProd)
+          return Buffer.from(s)
         }
         return content
       },

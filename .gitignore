@@ -22,6 +22,8 @@ pnpm-debug.log*
 *.sw?
 
 .env
+.env*
+!.env.default
 
 breadboard/*
 !breadboard/dev
