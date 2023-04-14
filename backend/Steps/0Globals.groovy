@@ -28,10 +28,5 @@ verifyRecaptcha = { player, responseStr ->
     Response response = client.newCall(request).execute()
     def responseString = response.body().string()
     JSONObject obj = new JSONObject(responseString)
-    def captcha = obj.get("success")
-    if (captcha) {
-        startTutorial(player)
-    } else {
-        player.step = "failedCaptcha"
-    }
+    return obj.get("success")
 }
